@@ -16,8 +16,7 @@ class String
 
   def count_sentences
     to_count = self.split(".").join('?').split('?').join("!").split("!")
-    binding.pry
-    to_count = to_count.delete(" ")
+    to_count.reject {|sentence| sentence == "" }
     to_count.count
   end
 end
